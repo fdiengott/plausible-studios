@@ -1,0 +1,31 @@
+---
+import type { Page } from 'astro'
+import { Image } from 'astro:assets'
+import { CollectionEntry, render } from 'astro:content'
+
+type Props = { section: CollectionEntry<'hero'>}
+
+const { section } = Astro.props
+const { Content } = await render(section)
+const { image } = section.data;
+
+---
+
+<section>
+	{image && image.location === 'left' && <Image src={image.src} alt={image.alt} width={500} height={500} loading="lazy" decoding="async" />}
+	<div class="content">
+		<Content />
+	</div>
+	{image && image.location === 'right' && <Image src={image.src} alt={image.alt} width={500} height={500} loading="lazy" decoding="async" />}
+</section>
+
+<style>
+	section {
+		display: flex;
+		gap: 1rem;
+	}
+
+	.content {
+		margin-block: auto;
+	}
+</style>

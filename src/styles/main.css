@@ -24,23 +24,34 @@
     }
 
     :root {
-        --gray: hsl(221.9deg 24.71% 50%);
-        --gray-light: hsl(218.18deg 26.83% 91.96%);
-        --gray-dark: hsl(221.74deg 25.27% 17.84%);
-        --gray-gradient: rgba(from var(--gray-light), 50%), #fff;
+        --black-400: hsl(0deg 0% 0%);
+        --white-400: hsl(0deg 0% 95%);
+        --gray-400: hsl(222deg 25% 50%);
+        --gray-300: hsl(222deg 25% 82%);
+        --gray-500: hsl(222deg 25% 18%);
+        --gray-gradient: rgba(from var(--gray-300), 50%), #fff;
+
         --blue-400: #2337ff;
         --blue-500: #000d8a;
-        --black: hsl(0deg 0% 47.46%);
+        --red-400: #ff0000;
     }
     :root {
         color-scheme: light dark;
 
-        --accent: light-dark(var(--blue-400), red);
-        --accent-dark: light-dark(var(--blue-500), red);
+        --color-bg: light-dark(var(--white-400), var(--black-400));
+        --color-text: light-dark(var(--black-400), var(--white-400));
 
-        --box-shadow: 0 2px 6px rgba(from var(--gray), 25%), 0 8px 24px rgba(from var(--gray), 33%), 0 16px 32px rgba(from var(--gray), 33%);
+        --accent: light-dark(var(--blue-400), var(--white-400));
+        --accent-dark: light-dark(var(--blue-500), var(--white-400));
 
-        color-scheme: light;
+        --box-shadow: 0 2px 6px rgba(from var(--gray-400), 25%), 0 8px 24px rgba(from var(--gray-400), 33%),
+            0 16px 32px rgba(from var(--gray-400), 33%);
+
+        --color-border: light-dark(var(--gray-300), var(--gray-500));
+        --color-code-bg: light-dark(var(--gray-300), var(--red-400));
+
+        /* HACK: */
+        color-scheme: dark;
     }
 
     body.light {

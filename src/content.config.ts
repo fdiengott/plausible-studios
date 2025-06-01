@@ -15,4 +15,16 @@ const blog = defineCollection({
     }),
 });
 
-export const collections = { blog };
+const hero = defineCollection({
+    loader: glob({ base: './src/content/hero', pattern: '**/*.{md,mdx}' }),
+    schema: ({ image }) =>
+        z.object({
+            image: z.object({
+                src: image(),
+                alt: z.string(),
+                location: z.enum(['left', 'right']),
+            }),
+        }),
+});
+
+export const collections = { blog, hero };

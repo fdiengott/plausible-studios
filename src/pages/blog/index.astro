@@ -52,12 +52,11 @@ const sortedPosts = (await getCollection('blog')).toSorted((a, b) => a.data.titl
 			}
 			.title {
 				margin: 0;
-				color: var(--black);
 				line-height: 1;
 			}
 			.date {
 				margin: 0;
-				color: var(--gray);
+				color: var(--gray-400);
 			}
 			ul li a:hover h4,
 			ul li a:hover .date {

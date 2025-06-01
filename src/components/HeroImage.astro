@@ -1,0 +1,41 @@
+---
+import headerImg from '../assets/plausible-studios-header.png';
+import { Image } from 'astro:assets';
+---
+
+<div class="hero-image-container">
+	{headerImg && <Image src={headerImg} alt="Plausible Studios header image" />}
+</div>
+
+<style>
+	.hero-image-container {
+		width: 100vw;
+		margin-inline-start: calc(-50vw + 50%);
+		margin-inline-end: calc(-50vw + 50%);
+		position: relative;
+		overflow: hidden;
+	}
+
+	.hero-image-container::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		height: 200%;
+		width: 200%;
+
+		background: 
+			repeating-conic-gradient(var(--black-400) 0 0.0003%, transparent 0 0.001%)
+			60% 60%/3000px 3000px,
+			repeating-conic-gradient(var(--black-400) 0 0.0001%, transparent 0 0.0002%)
+			40% 40%/3000px 3000px;
+		background-blend-mode: difference;
+		animation: back 0.2s infinite alternate;
+
+		opacity: 0.3;
+	}
+
+	@keyframes back {
+		100% { background-position: 50% 0, 60% 50%; }
+	}
+}
+</style>
