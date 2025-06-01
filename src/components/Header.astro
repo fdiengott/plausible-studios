@@ -1,0 +1,118 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import SocialLink from './SocialLink.astro'
+import { SITE_TITLE } from '../constants';
+import links from '@/config/social.json';
+
+import { 
+    IoCall,
+    IoGlobeOutline,
+    IoLogoFacebook,
+    IoLogoFoursquare,
+    IoLogoInstagram,
+    IoLogoLinkedin,
+    IoLogoMastodon,
+    IoLogoMedium,
+    IoLogoPinterest,
+    IoLogoReddit,
+    IoLogoSoundcloud,
+    IoLogoTiktok,
+    IoLogoTumblr,
+    IoLogoTwitter,
+    IoLogoVimeo,
+    IoLogoYoutube,
+    IoMail,
+} from "react-icons/io5";
+
+const {
+    email,
+    facebook,
+    foursquare,
+    instagram,
+    linkedin,
+    mastodon,
+    medium,
+    phone,
+    pinterest,
+    reddit,
+    soundcloud,
+    tiktok,
+    tumblr,
+    twitter,
+    vimeo,
+    website,
+    youtube,
+} = links;
+
+---
+
+<header>
+	<nav>
+		<h2><a href="/">{SITE_TITLE}</a></h2>
+		<div class="internal-links">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
+		</div>
+		<ul class="social-links">
+			<SocialLink ariaLabel="twitter" href={twitter} icon={IoLogoTwitter} />
+			<SocialLink ariaLabel="mastodon" href={mastodon} icon={IoLogoMastodon} />
+			<SocialLink ariaLabel="instagram" href={instagram} icon={IoLogoInstagram} />
+			<SocialLink ariaLabel="youtube" href={youtube} icon={IoLogoYoutube} />
+			<SocialLink ariaLabel="linkedin" href={linkedin} icon={IoLogoLinkedin} />
+			<SocialLink ariaLabel="medium" href={medium} icon={IoLogoMedium} />
+			<SocialLink ariaLabel="pinterest" href={pinterest} icon={IoLogoPinterest} />
+			<SocialLink ariaLabel="soundcloud" href={soundcloud} icon={IoLogoSoundcloud} />
+			<SocialLink ariaLabel="tumblr" href={tumblr} icon={IoLogoTumblr} />
+			<SocialLink ariaLabel="reddit" href={reddit} icon={IoLogoReddit} />
+			<SocialLink ariaLabel="facebook" href={facebook} icon={IoLogoFacebook} />
+			<SocialLink ariaLabel="vimeo" href={vimeo} icon={IoLogoVimeo} />
+			<SocialLink ariaLabel="tiktok" href={tiktok} icon={IoLogoTiktok} />
+			<SocialLink ariaLabel="foursquare" href={foursquare} icon={IoLogoFoursquare} />
+			<SocialLink ariaLabel="website" href={website} icon={IoGlobeOutline} />
+			<SocialLink ariaLabel="email" href={email && `mailto:${email}`} icon={IoMail} />
+			<SocialLink ariaLabel="telephone" href={phone && `tel:${phone}`} icon={IoCall} />
+		</ul>
+	</nav>
+</header>
+<style>
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(from var(--black), 5%);
+	}
+	h2 {
+		margin: 0;
+		font-size: 1em;
+	}
+
+	h2 a,
+	h2 a.active {
+		text-decoration: none;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	nav a {
+		padding: 1em 0.5em;
+		color: var(--black);
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	}
+	nav a.active {
+		text-decoration: none;
+		border-bottom-color: var(--accent);
+	}
+	.social-links {
+		display: flex;
+		gap: 0.5em;
+	}
+	@media (max-width: 720px) {
+		.social-links {
+			display: none;
+		}
+	}
+</style>
