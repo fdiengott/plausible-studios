@@ -1,5 +1,4 @@
 ---
-import type { Page } from 'astro'
 import { Image } from 'astro:assets'
 import { CollectionEntry, render } from 'astro:content'
 
@@ -23,9 +22,11 @@ const { image } = section.data;
 	section {
 		display: flex;
 		gap: 1rem;
+		flex-wrap: wrap;
 	}
 
 	.content {
 		margin-block: auto;
+		flex: 1 1 30ch;
 	}
 </style>

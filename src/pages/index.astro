@@ -22,9 +22,9 @@ const sortedHeroSections = heroSections.toSorted((a,b) => a.id.localeCompare(b.i
 			<HeroImage />
 
 			{sortedHeroSections.map((section) => (
-				<section>
+				<div class="section-container">
 					<HeroSection section={section} />
-				</section>
+				</div>
 			))}
 		</main>
 		<Footer />
@@ -32,7 +32,7 @@ const sortedHeroSections = heroSections.toSorted((a,b) => a.id.localeCompare(b.i
 </html>
 
 <style>
-	section {
+	.section-container {
 		margin-block-start: 2lh;
 	}
 </style>

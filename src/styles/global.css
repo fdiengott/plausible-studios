@@ -35,6 +35,7 @@ main {
     max-width: calc(100% - 2em);
     margin-inline: auto;
     padding: 3em 1em;
+    max-width: 1200px;
 }
 h1,
 h2,
