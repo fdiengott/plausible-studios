@@ -1,6 +1,6 @@
 ---
 image:
-    src: '../../assets/plausible-hero-img-1.jpg'
+    src: '../../assets/plausible-hero-img-2.jpg'
     alt: Hero image
     location: left
 ---
